@@ -2,8 +2,9 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FaGoogleDrive, FaBuilding, FaEdit, FaTrash, FaLinkedin, FaMapMarkerAlt, FaBriefcase, FaGraduationCap, FaRupeeSign } from 'react-icons/fa';
 import Navbar from "../../components/Navbar";
-import AlumniSidebar from "../../components/AlumniSidebar";
+import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
+import { FaStar } from "react-icons/fa";
 
 
 const AlumniProfile = () => {
@@ -192,12 +193,20 @@ const companyReviews = [
     "Technical": "bg-blue-100 text-blue-700",
     "Interview Prep": "bg-green-100 text-green-700", 
     "Resume": "bg-purple-100 text-purple-700",
-    "Career": "bg-orange-100 text-orange-700"
+    Coding: "bg-green-100 text-green-700",
+    Aptitude: "bg-yellow-100 text-yellow-700",
   };
 
-  const renderStars = (rating) => {
-    return "★".repeat(rating) + "☆".repeat(5 - rating);
-  };
+const renderStars = (count) => {
+  return [...Array(5)].map((_, idx) => (
+    <FaStar
+      key={idx}
+      className={`inline-block text-sm ${
+        idx < count ? "text-yellow-400" : "text-gray-300"
+      }`}
+    />
+  ));
+};
 
   const handleEdit = (type, itemId) => {
     console.log(`Edit ${type} with ID: ${itemId}`);
@@ -221,7 +230,7 @@ const companyReviews = [
 
   return (
     <div className="flex min-h-screen">
-      <AlumniSidebar />
+      <Sidebar />
       <div className="flex flex-col flex-1">
         <Navbar />
 
@@ -310,12 +319,14 @@ const companyReviews = [
                   <div className="flex gap-2 mt-4">
                     <a href={referral.referral_link} target="_blank" rel="noopener noreferrer" className="text-sm text-white bg-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-700 transition">Apply</a>
                     <Link to={`/api/job/${referral.id}`} className="text-sm text-indigo-600 px-4 py-2 rounded-lg border border-indigo-600 hover:bg-indigo-100 transition">Read More</Link>
-                    <button 
-                      onClick={() => handleEdit('job', referral.id)}
-                      className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
-                    >
-                      <FaEdit />
-                    </button>
+                     <Link to={`/api/alumni/edit-job/101`}>
+                      <button 
+                        onClick={() => handleEdit('job', referral.id)}
+                        className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
+                      >
+                        <FaEdit />
+                      </button>
+                      </Link>
                     <button 
                       onClick={() => handleDelete('job', referral.id)}
                       className="text-sm text-red-600 px-3 py-2 rounded-lg border border-red-600 hover:bg-red-50 transition"
@@ -349,12 +360,14 @@ const companyReviews = [
                   </div>
                   <div className="flex gap-2 mt-4">
                     <Link to={`/api/interview/${exp.id}`} className="text-sm text-indigo-600 hover:underline font-medium">Read More →</Link>
-                    <button 
-                      onClick={() => handleEdit('interview', exp.id)}
-                      className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
-                    >
-                      <FaEdit />
-                    </button>
+                    <Link to={`/api/alumni/edit-interview/201`}>
+                      <button 
+                        onClick={() => handleEdit('interview', exp.id)}
+                        className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
+                      >
+                        <FaEdit />
+                      </button>
+                    </Link>
                     <button 
                       onClick={() => handleDelete('interview', exp.id)}
                       className="text-sm text-red-600 px-3 py-2 rounded-lg border border-red-600 hover:bg-red-50 transition"

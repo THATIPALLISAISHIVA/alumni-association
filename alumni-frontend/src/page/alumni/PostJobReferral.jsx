@@ -2,7 +2,8 @@
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import AlumniSidebar from "../../components/AlumniSidebar";
+import Sidebar from "../../components/Sidebar";
+
 
 const PostJobReferral = () => {
   const [formData, setFormData] = useState({
@@ -30,7 +31,7 @@ const PostJobReferral = () => {
 
   return (
     <div className="flex min-h-screen">
-      <AlumniSidebar />
+      <Sidebar />
 
       <div className="flex flex-col flex-1">
         <Navbar />

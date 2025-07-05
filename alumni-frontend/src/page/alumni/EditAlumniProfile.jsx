@@ -3,7 +3,7 @@ import React, { useState} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import AlumniSidebar from "../../components/AlumniSidebar";
+import Sidebar from "../../components/Sidebar";
 
 const dummyAlumniData = [
   {
@@ -40,7 +40,7 @@ const EditAlumniProfile = () => {
 
   return (
     <div className="flex min-h-screen">
-      <AlumniSidebar />
+      <Sidebar />
 
       <div className="flex flex-col flex-1">
         <Navbar />

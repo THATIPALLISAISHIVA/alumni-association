@@ -26,6 +26,12 @@ import PostSuccessStory from "./page/alumni/PostSuccessStory";
 import PostCompanyReview from "./page/alumni/PostCompanyReview";
 import AlumniProfile from "./page/alumni/AlumniProfile";
 import EditAlumniProfile from "./page/alumni/EditAlumniProfile";
+import EditJobReferral from "./page/alumni/EditJobReferral";
+import EditInterviewExperience from "./page/alumni/EditInterviewExperience";
+
+
+
+
 
 
 
@@ -68,6 +74,9 @@ function App() {
         <Route path="/api/alumni/post-company-review" element={<PostCompanyReview/>} />
         <Route path="/api/alumni/edit-profile" element={<AlumniProfile/>} />
         <Route path="api/alumni/edit-alumni-data/:id" element={<EditAlumniProfile />} />
+        <Route path="/api/alumni/edit-job/:jobid" element={<EditJobReferral />} />
+        <Route path="/api/alumni/edit-interview/:interviewid" element={<EditInterviewExperience />} />
+        
 
 
         

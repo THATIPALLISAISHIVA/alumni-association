@@ -1,7 +1,7 @@
 // src/pages/alumni/PostSuccessStory.jsx
 import React, { useState } from "react";
 import Navbar from "../../components/Navbar";
-import AlumniSidebar from "../../components/AlumniSidebar";
+import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
 
 const PostSuccessStory = () => {
@@ -29,7 +29,7 @@ const PostSuccessStory = () => {
 
   return (
     <div className="flex min-h-screen">
-      <AlumniSidebar />
+      <Sidebar />
 
       <div className="flex-1 flex flex-col">
         <Navbar />

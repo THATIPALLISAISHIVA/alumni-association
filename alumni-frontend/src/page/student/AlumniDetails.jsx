@@ -212,7 +212,7 @@ const companyReviews = [
 const categoryColors = {
   Coding: "bg-green-100 text-green-700",
   Aptitude: "bg-yellow-100 text-yellow-700",
-  Resume: "bg-blue-100 text-blue-700",
+  Resume: "bg-blue-100 text-blue-700  ",
 };
 
 const renderStars = (count) => {
