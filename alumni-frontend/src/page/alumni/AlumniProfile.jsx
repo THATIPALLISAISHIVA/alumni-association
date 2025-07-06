@@ -392,12 +392,14 @@ const renderStars = (count) => {
                   <p className="text-sm text-gray-600">Posted by: <span className="font-medium text-gray-800">{story.posted_by}</span></p>
                   <div className="flex gap-2 mt-4">
                     <Link to={`/api/success-stories/${story.id}`} className="inline-block text-indigo-600 font-medium hover:underline text-sm">Read More →</Link>
-                    <button 
-                      onClick={() => handleEdit('story', story.id)}
-                      className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
-                    >
-                      <FaEdit />
-                    </button>
+                    <Link to={`/api/alumni/edit-success-story/301`}> 
+                      <button 
+                        onClick={() => handleEdit('story', story.id)}
+                        className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
+                      >
+                        <FaEdit />
+                      </button>
+                    </Link>
                     <button 
                       onClick={() => handleDelete('story', story.id)}
                       className="text-sm text-red-600 px-3 py-2 rounded-lg border border-red-600 hover:bg-red-50 transition"
@@ -426,12 +428,14 @@ const renderStars = (count) => {
                     <a href={res.drive_link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-white bg-red-500 hover:bg-red-600 px-4 py-2 rounded-lg transition">
                       <FaGoogleDrive className="text-white text-lg" /> View Resource
                     </a>
-                    <button 
-                      onClick={() => handleEdit('resource', res.id)}
-                      className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
-                    >
-                      <FaEdit />
-                    </button>
+                    <Link to={`/api/alumni/edit-resource/1`}>
+                      <button 
+                        onClick={() => handleEdit('resource', res.id)}
+                        className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
+                      >
+                        <FaEdit />
+                      </button>
+                    </Link>
                     <button 
                       onClick={() => handleDelete('resource', res.id)}
                       className="text-sm text-red-600 px-3 py-2 rounded-lg border border-red-600 hover:bg-red-50 transition"
@@ -491,12 +495,14 @@ const renderStars = (count) => {
                     >
                       Read More →
                     </Link>
-                    <button 
-                      onClick={() => handleEdit('review', review.id)}
-                      className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
-                    >
-                      <FaEdit />
-                    </button>
+                    <Link to={`/api/alumni/edit-company-reviews/1`}>
+                      <button 
+                        onClick={() => handleEdit('review', review.id)}
+                        className="text-sm text-green-600 px-3 py-2 rounded-lg border border-green-600 hover:bg-green-50 transition"
+                      >
+                        <FaEdit />
+                      </button>
+                    </Link>
                     <button 
                       onClick={() => handleDelete('review', review.id)}
                       className="text-sm text-red-600 px-3 py-2 rounded-lg border border-red-600 hover:bg-red-50 transition"

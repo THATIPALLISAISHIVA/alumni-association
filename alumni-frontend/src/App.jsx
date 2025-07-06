@@ -19,6 +19,7 @@ import InterviewDetails from "./page/student/InterviewDetails";
 import AlumniDetails from "./page/student/AlumniDetails";
 
 //alumni imports
+import AlumniDashboard from "./page/alumni/AlumniDashboard";
 import PostJobReferral from "./page/alumni/PostJobReferral";
 import PostInterviewExperience from "./page/alumni/PostInterviewExperience";
 import UploadResource from "./page/alumni/UploadResource";
@@ -28,6 +29,9 @@ import AlumniProfile from "./page/alumni/AlumniProfile";
 import EditAlumniProfile from "./page/alumni/EditAlumniProfile";
 import EditJobReferral from "./page/alumni/EditJobReferral";
 import EditInterviewExperience from "./page/alumni/EditInterviewExperience";
+import EditSuccessStory from "./page/alumni/EditSuccessStory";
+import EditResource from "./page/alumni/EditResource";
+import EditCompanyReview from "./page/alumni/EditCompanyReview";
 
 
 
@@ -66,7 +70,7 @@ function App() {
         <Route path="/api/interview/:id" element={<InterviewDetails />} />
 
         {/* alumni routes */}
-
+        <Route path="/api/alumni/dashboard" element={<AlumniDashboard />} />
         <Route path="/api/alumni/post-referral" element={<PostJobReferral />} />
         <Route path="/api/alumni/post-interview" element={<PostInterviewExperience />} />
         <Route path="/api/alumni/upload-resource" element={<UploadResource/>} />
@@ -76,10 +80,12 @@ function App() {
         <Route path="api/alumni/edit-alumni-data/:id" element={<EditAlumniProfile />} />
         <Route path="/api/alumni/edit-job/:jobid" element={<EditJobReferral />} />
         <Route path="/api/alumni/edit-interview/:interviewid" element={<EditInterviewExperience />} />
+        <Route path="/api/alumni/edit-success-story/:storyid" element={<EditSuccessStory />} />
+        <Route path="/api/alumni/edit-resource/:resourceid" element={<EditResource />} />
+        <Route path="/api/alumni/edit-company-reviews/:reviewId" element={<EditCompanyReview />} />
         
 
 
-        
       </Routes>
     </Router>
     </>
