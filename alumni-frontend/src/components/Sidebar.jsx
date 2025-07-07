@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const role = "alumni"; // use actual role from backend/auth here (e.g., 'student' or 'alumni')
+  const role = "student"; // use actual role from backend/auth here (e.g., 'student' or 'alumni')
 
   const studentLinks = [
     { label: "View Alumni Profiles", path: "/api/alumni-profiles" },
