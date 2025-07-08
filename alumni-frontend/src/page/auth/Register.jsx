@@ -43,8 +43,41 @@ const navigate = useNavigate();
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleProfileSubmit = (data) => {
-    console.log("Submitted Profile:", data);
+  const handleProfileSubmit = (profileData) => {
+    // console.log("Submitted Profile:", profileData);
+    
+    // Differentiate data based on userType field
+    if (profileData.userType === 'student') {
+      // Handle student data - add to student table
+      const studentPayload = {
+        batch: profileData.batch,
+        department: profileData.department,
+        student_id: profileData.student_id
+      };
+      
+      console.log("Student Data for Database:", studentPayload);
+      // Call your API to add student data to student table
+      // addStudentToDatabase(studentPayload);
+      
+    } else if (profileData.userType === 'alumni') {
+      // Handle alumni data - add to alumni table
+      const alumniPayload = {
+        // Alumni specific data
+        company: profileData.company,
+        jobrole: profileData.role,
+        location: profileData.location,
+        batch: profileData.batch,
+        linkedin_url: profileData.linkedin_url,
+        profile_image_url: profileData.profile_image_url,
+        salary_lpa: profileData.salary_lpa,
+        alumni_id: profileData.alumni_id
+      };
+      
+      console.log("Alumni Data for Database:", alumniPayload);
+      // Call your API to add alumni data to alumni table
+      // addAlumniToDatabase(alumniPayload);
+    }
+    
     alert("Profile submitted successfully (check console).");
     navigate("/login");
   };

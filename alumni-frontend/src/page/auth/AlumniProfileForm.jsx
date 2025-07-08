@@ -16,10 +16,17 @@ const AlumniProfileForm = ({ onSubmit }) => {
     setAlumniData({ ...alumniData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+ const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Alumni Profile Submitted:", alumniData);
-    onSubmit(alumniData);
+    
+    // Add userType field to differentiate in parent component
+    const dataWithType = {
+      ...alumniData,
+      userType: 'alumni' // This helps identify the data type
+    };
+    
+    onSubmit(dataWithType);
   };
 
   return (

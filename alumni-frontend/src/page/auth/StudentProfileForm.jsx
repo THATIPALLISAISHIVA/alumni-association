@@ -14,7 +14,14 @@ const StudentProfileForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Student Profile Submitted:", studentData);
-    onSubmit(studentData);
+    
+    // Add userType field to differentiate in parent component
+    const dataWithType = {
+      ...studentData,
+      userType: 'student' // This helps identify the data type
+    };
+    
+    onSubmit(dataWithType);
   };
 
   return (
